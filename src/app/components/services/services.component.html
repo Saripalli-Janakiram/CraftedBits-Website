@@ -1,0 +1,19 @@
+<section class="services">
+  <div class="services__header">
+    <h2>Our Services</h2>
+    <p>
+      CraftedBits delivers solutions across <strong>emerging technologies</strong>,
+      blending <strong>research, creativity</strong>, and <strong>engineering excellence</strong>.
+    </p>
+  </div>
+
+  <div class="services__grid">
+    <div class="service__card" *ngFor="let service of services">
+      <div class="icon">
+        <i [class]="service.icon"></i>
+      </div>
+      <h3>{{ service.title }}</h3>
+      <p>{{ service.description }}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,113 @@
+$primary-color: #22797d;
+$accent-color: #ff7b42;
+$bg-light: #f9fbfc;
+$text-dark: #1c1c1c;
+$text-muted: #555;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #eef5f6, #f9fbfc);
+  border-bottom: 2px solid rgba($primary-color, 0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white; // ensures teal logo stands out
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba($primary-color, 0.15);
+
+    img {
+      width: 110px;
+      height: auto;
+      max-height: 80px;
+      filter: drop-shadow(0 0 8px rgba($accent-color, 0.6))
+              brightness(1.1)
+              contrast(1.2);
+      transition: transform 0.3s ease, filter 0.3s ease;
+
+      &:hover {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 14px rgba($accent-color, 0.7))
+                brightness(1.15)
+                contrast(1.25);
+      }
+    }
+
+    .navbar__brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $text-dark;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+
+    a {
+      color: $text-muted;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: $accent-color;
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: $primary-color;
+
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    background: $accent-color;
+    border: none;
+    color: white;
+    padding: 0.7rem 1.6rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: lighten($accent-color, 10%);
+      transform: scale(1.05);
+    }
+  }
+
+  // Responsive
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+
+    &__links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+}

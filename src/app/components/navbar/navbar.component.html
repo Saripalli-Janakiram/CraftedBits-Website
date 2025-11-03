@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <div class="navbar__logo">
+    <!-- <img src="assets/CraftedBits_Logo.png" alt="CraftedBits Logo" /> -->
+    <span class="navbar__brand">CraftedBits</span>
+  </div>
+
+  <ul class="navbar__links">
+    <li><a href="#about"(click)="scrollToSection($event, 'hero')">About</a></li>
+   <li> <a href="#services" (click)="scrollToSection($event, 'services')">Services</a></li>
+    <li><a href="#team"(click)="scrollToSection($event, 'team')">Team</a></li>
+  <li><a href="#contact" (click)="scrollToSection($event, 'contact')">Contact</a></li>
+  </ul>
+  <button class="navbar__cta" onclick="scrollToSection($event, 'contact')">Get Started</button>
+</nav>
